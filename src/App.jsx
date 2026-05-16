@@ -1,30 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
-  const data = {
-    Kerala: "Thiruvananthapuram",
-    Karnataka: "Bengaluru",
-    Tamilnadu: "Chenni",
-  };
+  const [count, setcount] = useState(0);
 
-  const [selectedState, setSelectedState] = useState("Kerala");
+  useEffect(() => {
+    document.title = `count :${count}`;
+  }, [count]);
 
   return (
-    <>
-      <select
-        value={selectedState}
-        onChange={(e) => setSelectedState(e.target.value)}
-      >
-        <option value="Kerala"> Kerala </option>
-        <option value="Karnataka"> Karnataka </option>
-        <option value="Tamilnadu"> Tamilnadu </option>
-      </select>
-
-      <p>
-        {" "}
-        Selected state is : {selectedState} capital is : {data[selectedState]}
-      </p>
-    </>
+    <div>
+      <p> {count} </p>
+      <button onClick={() => setcount(count + 1)}> Increment </button>
+    </div>
   );
 }
 
