@@ -8,19 +8,10 @@ export default function App() {
   };
 
   const [selectedState, setSelectedState] = useState("Kerala");
-  const [selectedCapital, setSelectedCapital] = useState("Thiruvananthapuram");
-
-  const selectState = (e) => {
-    setSelectedState(e.target.value);
-  };
-  const changeCapital = () => {
-    setSelectedCapital(data[selectedState]);
-  };
-  useEffect(changeCapital, [selectedState]);
 
   return (
     <>
-      <select onChange={selectState}>
+      <select onChange={(e) => setSelectedState(e.target.value)}>
         <option value="Kerala"> Kerala </option>
         <option value="Karnataka"> Karnataka </option>
         <option value="Tamilnadu"> Tamilnadu </option>
@@ -28,7 +19,7 @@ export default function App() {
 
       <p>
         {" "}
-        Selected state is : {selectedState} capital is : {selectedCapital}
+        Selected state is : {selectedState} capital is : {data[selectedState]}
       </p>
     </>
   );
