@@ -1,0 +1,15 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.stateCard {
+  background-color: blanchedalmond;
+  width: 350px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+  padding: 5px;
+  border: 3px;
+  border-color: bisque;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+}
