@@ -2,20 +2,23 @@ import { useRef, useState } from "react";
 
 export default function App() {
   const txtRef = useRef();
-  const [txt, setTxt] = useState("");
+  const [age, setAge] = useState("");
   return (
     <div>
-      <input ref={txtRef} type="text" />
+      <input ref={txtRef} type="text" placeholder="Enter a name" />
       <button
-        onClick={() => {
-          console.log(txtRef.current.value);
-          setTxt(txtRef.current.value);
+        onClick={async () => {
+          const text = txtRef.current.value;
+          console.log(`api.agify.io/?name=${text}`);
+          const response = await fetch(`https://api.agify.io/?name=${text}`);
+          const msg = await response.json();
+          console.log(msg.age);
+          setAge(msg.age);
         }}
       >
-        {" "}
-        getText{" "}
+        Get age
       </button>
-      <p> input text = {txt} </p>
+      <p> you age is : {age} </p>
     </div>
   );
 }
@@ -26,6 +29,6 @@ export default function App() {
   sd" - delete quote around word
   sr"{ - replace quote with {
 
-
+wadsfsd lksdjlfkd ld ldsfjlfl  lajsdf 
     */
 }
