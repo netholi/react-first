@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function App() {
   const data = {
@@ -11,7 +11,10 @@ export default function App() {
 
   return (
     <>
-      <select onChange={(e) => setSelectedState(e.target.value)}>
+      <select
+        value={selectedState}
+        onChange={(e) => setSelectedState(e.target.value)}
+      >
         <option value="Kerala"> Kerala </option>
         <option value="Karnataka"> Karnataka </option>
         <option value="Tamilnadu"> Tamilnadu </option>
