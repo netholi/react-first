@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CountContext } from "../App";
+import CountContext from "../contexts/CountContext";
 import DecrimentButt from "./DecrimentButton";
 
 export default function Card() {
