@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import CountContext from "../contexts/CountContext";
 import DecrimentButt from "./DecrimentButton";
+import useCount from "../hooks/useCount";
 
 export default function Card() {
-  const { count } = useContext(CountContext);
+  const { count } = useCount();
   return (
     <div>
       <h3> Card counter : {count} </h3>
